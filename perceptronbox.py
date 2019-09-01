@@ -35,6 +35,9 @@ def setup():
 def main():
     win = setup()
     points = []
+    circles = []
+    trons = []
+    index = 0
     for i in range(100):
         point = Dot()
         points.append(point)
@@ -44,10 +47,12 @@ def main():
         inputs = [i.x,i.y]
         target = i.label
         p = ptron.perceptron()
-
-        p.train(inputs, target)
+        trons.append(p)
+        
+        #p.train(inputs, target)
         guess = p.guess(inputs)     
         c = Dot.show(i)
+        circles.append(c)
         if guess == target:           
             c.setFill("green")
         else:
@@ -55,6 +60,21 @@ def main():
             print(guess," ",target)
         c.draw(win)
     
-    
+    while True:
+        click = win.checkMouse()
+        if click:
+            print("yes")
+            for i,j,p in zip(points,circles,trons):
+                inputs = [i.x,i.y]
+                target = i.label
+                p.train(inputs, target)
+                guess = p.guess(inputs)                
+                if guess == target:           
+                    j.setFill("green")
+                else:
+                    j.setFill("red")
+                   
+                    j.undraw()
+                    j.draw(win)
 main()
 

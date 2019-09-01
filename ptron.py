@@ -7,7 +7,7 @@ def sign(n):
 
 class perceptron(object):
     weights = []
-    lr = 0.1
+    lr = 0.001
     def __init__ (self):
         self.weights = []
         self.weights.append(random.choice([-1,1])) 
