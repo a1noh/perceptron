@@ -15,7 +15,7 @@ class perceptron(object):
     def guess(self, inputs):
         sum = 0
         for i in range(2):
-            sum += inputs[i] * self.weights[i]
+            sum += inputs[i] * self.weights[i] #if weight is 0 don't change
         output = sign(sum)
         return output
     def train(self, inputs, target):
@@ -23,7 +23,7 @@ class perceptron(object):
         error = target - guess
         #tune all the weights
         for i in range(2):
-            self.weights[i] += error * inputs[i] * self.lr
+            self.weights[i] += error * inputs[i] * self.lr #tweak it a little
     
 #weights = perceptron()
 #print(weights.weights[0])
