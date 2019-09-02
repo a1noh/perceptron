@@ -57,7 +57,7 @@ def main():
             c.setFill("green")
         else:
             c.setFill("red")
-            print(guess," ",target)
+            #print(guess," ",target)
         c.draw(win)
     
     while True:

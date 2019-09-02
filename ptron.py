@@ -16,6 +16,7 @@ class perceptron(object):
         sum = 0
         for i in range(2):
             sum += inputs[i] * self.weights[i] #if weight is 0 don't change
+       
         output = sign(sum)
         return output
     def train(self, inputs, target):
