@@ -63,7 +63,7 @@ def main():
     while True:
         click = win.checkMouse()
         if click:
-            print("yes")
+            #print("yes")
             for i,j,p in zip(points,circles,trons):
                 inputs = [i.x,i.y]
                 target = i.label
